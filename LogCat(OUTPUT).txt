@@ -1,0 +1,753 @@
+Selecting Applet...
+Applet Selected with AID : F000000001
+**************************************
+test Wrong CLA STORE_DATA, start ...
+APDU STORE_DATA ...
+APDU Command : 40 10 05 05 10 07 05 07 08 02 01 02 03 07 05 07 08 02 01 02 03
+SW : 6e00
+test Wrong CLA STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongP1 STORE_DATA, start...
+APDU STORE_DATA ...
+APDU Command : 00 10 01 00 08 07 05 07 08 02 01 02 03
+SW : 6b00
+test WrongP1 STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongP2 STORE_DATA, start...
+APDU STORE_DATA ...
+APDU Command : 00 10 00 05 08 07 05 07 08 02 01 02 03
+SW : 6b00
+test WrongP2 STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLcVsP2 Nom STORE_DATA, start...
+APDU STORE_DATA ...
+APDU Command : 00 10 00 01 0F 07 05 07 08 02 01 02 03 05 07 08 02 01 02 03
+SW : 6700
+test WrongLcVsP2 Nom STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLcVsP2 Prenom STORE_DATA, start...
+APDU STORE_DATA ...
+APDU Command : 00 10 00 02 0F 07 05 07 08 02 01 02 03 05 07 08 02 01 02 03
+SW : 6700
+test WrongLcVsP2 Prenom STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLcVsP2 DateNaissance STORE_DATA, start...
+APDU STORE_DATA ...
+APDU Command : 00 10 00 03 02 07 05
+SW : 6700
+test WrongLcVsP2 DateNaissance STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLcVsP2 DateNaissance2 STORE_DATA, start...
+APDU STORE_DATA ...
+APDU Command : 00 10 00 03 05 07 05 07 08 02
+SW : 6700
+test WrongLcVsP2 DateNaissance2 STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLcVsP2 ID1 STORE_DATA, start...
+APDU STORE_DATA ...
+APDU Command : 00 10 00 04 08 07 05 07 08 02
+SW : 6700
+test WrongLcVsP2 ID1 STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLcVsP2 ID1 STORE_DATA, start...
+APDU STORE_DATA ...
+APDU Command : 00 10 00 04 09 07 05 07 08 02 05 07 08 02
+SW : 6700
+test WrongLcVsP2 ID2 STORE_DATA, ended PASS ...
+**************************************
+**************************************
+test Wrong CLA READ_DATA, start ...
+APDU READ_DATA ...
+APDU Command : 40 20 02 05 20
+SW : 6e00
+test Wrong CLA READ_DATA, ended PASS ...
+**************************************
+**************************************
+test Wrong P1 READ_DATA, start ...
+APDU READ_DATA ...
+APDU Command : 00 20 03 01 20
+SW : 6b00
+test Wrong P1 READ_DATA, ended PASS ...
+**************************************
+**************************************
+test Wrong P2 READ_DATA, start ...
+APDU READ_DATA ...
+APDU Command : 00 20 00 08 20
+SW : 6b00
+test Wrong P2 READ_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLeVsP2 NomPrenom READ_DATA, start ...
+APDU STORE_DATA nom ...
+APDU Command : 00 10 00 01 09 07 05 07 05 0A 01 02 03 08
+SW : 9000
+APDU STORE_DATA nom ...
+APDU Command : 00 10 00 02 0B 07 05 07 05 07 05 0A 01 02 03 08
+SW : 9000
+APDU READ_DATA ...
+APDU Command : 00 20 00 02 20
+SW : 6c20
+test WrongLeVsP2 READ_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLeVsP2 DateNaissance READ_DATA, start ...
+APDU STORE_DATA DateNaissance ...
+APDU Command : 00 10 00 03 04 09 04 19 75
+SW : 9000
+Read Data WrongLeVsP2 DateNaissance...
+APDU READ_DATA ...
+
+SW : 6c04
+test WrongLeVsP2 DateNaissance READ_DATA, ended PASS ...
+**************************************
+**************************************
+test WrongLeVsP2 ID READ_DATA, start ...
+APDU STORE_DATA ID ...
+APDU Command : 00 10 00 04 08 17 01 02 03 04 05 06 07
+SW : 9000
+Read Data WrongLeVsP2 ID...
+APDU READ_DATA ...
+
+SW : 6c08
+test WrongLeVsP2 ID READ_DATA, ended PASS ...
+**************************************
+**************************************
+test Good_Nom_Prenom STORE_DATA, start...
+APDU STORE_DATA nom ...
+APDU Command : 00 10 00 01 03 07 05 07
+SW : 9000
+APDU STORE_DATA Prenom ...
+APDU Command : 00 10 00 02 03 07 05 07
+SW : 9000
+test Good_Nom_Prenom STORE_DATA, SW is OK ...
+Read Data to check...
+APDU READ_DATA ...
+APDU Command : 00 20 00 02 06 07 05 07 07 05 07
+SW : 9000
+test Good_Nom_Prenom STORE_READ_DATA, Data Read back is OK ...
+test Good_Nom_Prenom STORE_READ_DATA, ended PASS ...
+**************************************
+**************************************
+test Good_Date STORE_DATA, start...
+APDU STORE_DATA DateNaissance ...
+APDU Command : 00 10 00 03 04 12 03 20 01
+SW : 9000
+test Good_Date STORE_DATA, SW is OK ...
+Read Data to check...
+APDU READ_DATA ...
+APDU Command : 00 20 00 03 04 12 03 20 01
+SW : 9000
+test Good_Date STORE_READ_DATA, Data Read back is OK ...
+test Good_Date STORE_READ_DATA, ended PASS ...
+**************************************
+**************************************
+test Good_ID STORE_DATA, start...
+APDU STORE_DATA ID ...
+APDU Command : 00 10 00 04 08 0A 01 02 03 04 05 06 07
+SW : 9000
+test Good_ID STORE_DATA, SW is OK ...
+Read Data to check...
+APDU READ_DATA ...
+APDU Command : 00 20 00 04 08 0A 01 02 03 04 05 06 07
+SW : 9000
+test Good_ID STORE_READ_DATA, Data Read back is OK ...
+test Good_ID STORE_READ_DATA, ended PASS ...
+**************************************
+**************************************
+test Wrong CLA UPDATE_DATE, start ...
+APDU UPDATE_DATE ...
+APDU Command : 80 30 05 05 10 07 05 07 08 02 01 02 03 07 05 07 08 02 01 02 03
+SW : 6e00
+test Wrong CLA UPDATE_DATE, ended PASS ...
+**************************************
+**************************************
+test WrongP1 UPDATE_DATE, start...
+APDU UPDATE_DATE ...
+APDU Command : 84 30 01 03 09 07 05 07 08 02 01 02 03 05
+SW : 6b00
+test WrongP1 UPDATE_DATE, ended PASS ...
+**************************************
+**************************************
+test WrongP2 UPDATE_DATE, start...
+APDU UPDATE_DATE ...
+APDU Command : 84 30 00 02 04 07 05 07 08
+SW : 6b00
+test WrongP2 UPDATE_DATE, ended PASS ...
+**************************************
+**************************************
+test WrongLc UPDATE_DATE, start...
+APDU UPDATE_DATE ...
+APDU Command : 84 30 00 03 04 07 05 07 08
+SW : 6700
+test WrongLc UPDATE_DATE, ended PASS ...
+**************************************
+**************************************
+test WrongMAC UPDATE_DATE, start...
+APDU UPDATE_DATE ...
+APDU Command : 84 30 00 03 08 07 05 07 08 00 00 00 00
+SW : 6982
+test WrongMAC UPDATE_DATE, ended PASS ...
+**************************************
+**************************************
+test GoodData UPDATE_DATE, start...
+APDU UPDATE_DATE ...
+APDU Command : 84 30 00 03 08 07 05 07 08 35 CD 40 19
+SW : 9000
+test GoodData UPDATE_DATE, ended PASS ...
+**************************************
+**************************************
+test Wrong CLA UPDATE_ID, start ...
+APDU UPDATE_ID ...
+APDU Command : 80 40 05 05 10 07 05 07 08 02 01 02 03 07 05 07 08 02 01 02 03
+SW : 6e00
+test Wrong CLA UPDATE_ID, ended PASS ...
+**************************************
+**************************************
+test WrongP1 UPDATE_ID, start...
+APDU UPDATE_ID ...
+APDU Command : 84 40 01 04 09 07 05 07 08 02 01 02 03 05
+SW : 6b00
+test WrongP1 UPDATE_ID, ended PASS ...
+**************************************
+**************************************
+test WrongP2 UPDATE_ID, start...
+APDU UPDATE_ID ...
+APDU Command : 84 40 00 03 04 07 05 07 08
+SW : 6b00
+test WrongP2 UPDATE_ID, ended PASS ...
+**************************************
+**************************************
+test WrongLc UPDATE_ID, start...
+APDU UPDATE_ID ...
+APDU Command : 84 40 00 04 04 07 05 07 08
+SW : 6700
+test WrongLc UPDATE_ID, ended PASS ...
+**************************************
+**************************************
+test GoodData UPDATE_ID, start...
+APDU UPDATE_ID ...
+APDU Command : 84 40 00 04 08 63 73 B7 41 89 5E 18 61
+SW : 9000
+Read ID Data to check...
+APDU READ_DATA ...
+APDU Command : 00 20 00 04 08 07 05 07 08 01 02 03 09
+SW : 9000
+Data Read back is OK (correctly deciphered and stored)...
+test GoodData UPDATE_ID, ended PASS ...
+**************************************
+**************************************
+test INSNotSupported, start...
+APDU Command : 00 00 00 04 01
+SW : 6d00
+APDU Command : 00 01 00 04 01
+SW : 6d00
+APDU Command : 00 02 00 04 01
+SW : 6d00
+APDU Command : 00 03 00 04 01
+SW : 6d00
+APDU Command : 00 04 00 04 01
+SW : 6d00
+APDU Command : 00 05 00 04 01
+SW : 6d00
+APDU Command : 00 06 00 04 01
+SW : 6d00
+APDU Command : 00 07 00 04 01
+SW : 6d00
+APDU Command : 00 08 00 04 01
+SW : 6d00
+APDU Command : 00 09 00 04 01
+SW : 6d00
+APDU Command : 00 0A 00 04 01
+SW : 6d00
+APDU Command : 00 0B 00 04 01
+SW : 6d00
+APDU Command : 00 0C 00 04 01
+SW : 6d00
+APDU Command : 00 0D 00 04 01
+SW : 6d00
+APDU Command : 00 0E 00 04 01
+SW : 6d00
+APDU Command : 00 0F 00 04 01
+SW : 6d00
+APDU Command : 00 11 00 04 01
+SW : 6d00
+APDU Command : 00 12 00 04 01
+SW : 6d00
+APDU Command : 00 13 00 04 01
+SW : 6d00
+APDU Command : 00 14 00 04 01
+SW : 6d00
+APDU Command : 00 15 00 04 01
+SW : 6d00
+APDU Command : 00 16 00 04 01
+SW : 6d00
+APDU Command : 00 17 00 04 01
+SW : 6d00
+APDU Command : 00 18 00 04 01
+SW : 6d00
+APDU Command : 00 19 00 04 01
+SW : 6d00
+APDU Command : 00 1A 00 04 01
+SW : 6d00
+APDU Command : 00 1B 00 04 01
+SW : 6d00
+APDU Command : 00 1C 00 04 01
+SW : 6d00
+APDU Command : 00 1D 00 04 01
+SW : 6d00
+APDU Command : 00 1E 00 04 01
+SW : 6d00
+APDU Command : 00 1F 00 04 01
+SW : 6d00
+APDU Command : 00 21 00 04 01
+SW : 6d00
+APDU Command : 00 22 00 04 01
+SW : 6d00
+APDU Command : 00 23 00 04 01
+SW : 6d00
+APDU Command : 00 24 00 04 01
+SW : 6d00
+APDU Command : 00 25 00 04 01
+SW : 6d00
+APDU Command : 00 26 00 04 01
+SW : 6d00
+APDU Command : 00 27 00 04 01
+SW : 6d00
+APDU Command : 00 28 00 04 01
+SW : 6d00
+APDU Command : 00 29 00 04 01
+SW : 6d00
+APDU Command : 00 2A 00 04 01
+SW : 6d00
+APDU Command : 00 2B 00 04 01
+SW : 6d00
+APDU Command : 00 2C 00 04 01
+SW : 6d00
+APDU Command : 00 2D 00 04 01
+SW : 6d00
+APDU Command : 00 2E 00 04 01
+SW : 6d00
+APDU Command : 00 2F 00 04 01
+SW : 6d00
+APDU Command : 00 31 00 04 01
+SW : 6d00
+APDU Command : 00 32 00 04 01
+SW : 6d00
+APDU Command : 00 33 00 04 01
+SW : 6d00
+APDU Command : 00 34 00 04 01
+SW : 6d00
+APDU Command : 00 35 00 04 01
+SW : 6d00
+APDU Command : 00 36 00 04 01
+SW : 6d00
+APDU Command : 00 37 00 04 01
+SW : 6d00
+APDU Command : 00 38 00 04 01
+SW : 6d00
+APDU Command : 00 39 00 04 01
+SW : 6d00
+APDU Command : 00 3A 00 04 01
+SW : 6d00
+APDU Command : 00 3B 00 04 01
+SW : 6d00
+APDU Command : 00 3C 00 04 01
+SW : 6d00
+APDU Command : 00 3D 00 04 01
+SW : 6d00
+APDU Command : 00 3E 00 04 01
+SW : 6d00
+APDU Command : 00 3F 00 04 01
+SW : 6d00
+APDU Command : 00 41 00 04 01
+SW : 6d00
+APDU Command : 00 42 00 04 01
+SW : 6d00
+APDU Command : 00 43 00 04 01
+SW : 6d00
+APDU Command : 00 44 00 04 01
+SW : 6d00
+APDU Command : 00 45 00 04 01
+SW : 6d00
+APDU Command : 00 46 00 04 01
+SW : 6d00
+APDU Command : 00 47 00 04 01
+SW : 6d00
+APDU Command : 00 48 00 04 01
+SW : 6d00
+APDU Command : 00 49 00 04 01
+SW : 6d00
+APDU Command : 00 4A 00 04 01
+SW : 6d00
+APDU Command : 00 4B 00 04 01
+SW : 6d00
+APDU Command : 00 4C 00 04 01
+SW : 6d00
+APDU Command : 00 4D 00 04 01
+SW : 6d00
+APDU Command : 00 4E 00 04 01
+SW : 6d00
+APDU Command : 00 4F 00 04 01
+SW : 6d00
+APDU Command : 00 50 00 04 01
+SW : 6d00
+APDU Command : 00 51 00 04 01
+SW : 6d00
+APDU Command : 00 52 00 04 01
+SW : 6d00
+APDU Command : 00 53 00 04 01
+SW : 6d00
+APDU Command : 00 54 00 04 01
+SW : 6d00
+APDU Command : 00 55 00 04 01
+SW : 6d00
+APDU Command : 00 56 00 04 01
+SW : 6d00
+APDU Command : 00 57 00 04 01
+SW : 6d00
+APDU Command : 00 58 00 04 01
+SW : 6d00
+APDU Command : 00 59 00 04 01
+SW : 6d00
+APDU Command : 00 5A 00 04 01
+SW : 6d00
+APDU Command : 00 5B 00 04 01
+SW : 6d00
+APDU Command : 00 5C 00 04 01
+SW : 6d00
+APDU Command : 00 5D 00 04 01
+SW : 6d00
+APDU Command : 00 5E 00 04 01
+SW : 6d00
+APDU Command : 00 5F 00 04 01
+SW : 6d00
+APDU Command : 00 60 00 04 01
+SW : 6d00
+APDU Command : 00 61 00 04 01
+SW : 6d00
+APDU Command : 00 62 00 04 01
+SW : 6d00
+APDU Command : 00 63 00 04 01
+SW : 6d00
+APDU Command : 00 64 00 04 01
+SW : 6d00
+APDU Command : 00 65 00 04 01
+SW : 6d00
+APDU Command : 00 66 00 04 01
+SW : 6d00
+APDU Command : 00 67 00 04 01
+SW : 6d00
+APDU Command : 00 68 00 04 01
+SW : 6d00
+APDU Command : 00 69 00 04 01
+SW : 6d00
+APDU Command : 00 6A 00 04 01
+SW : 6d00
+APDU Command : 00 6B 00 04 01
+SW : 6d00
+APDU Command : 00 6C 00 04 01
+SW : 6d00
+APDU Command : 00 6D 00 04 01
+SW : 6d00
+APDU Command : 00 6E 00 04 01
+SW : 6d00
+APDU Command : 00 6F 00 04 01
+SW : 6d00
+APDU Command : 00 70 00 04 01
+SW : 6d00
+APDU Command : 00 71 00 04 01
+SW : 6d00
+APDU Command : 00 72 00 04 01
+SW : 6d00
+APDU Command : 00 73 00 04 01
+SW : 6d00
+APDU Command : 00 74 00 04 01
+SW : 6d00
+APDU Command : 00 75 00 04 01
+SW : 6d00
+APDU Command : 00 76 00 04 01
+SW : 6d00
+APDU Command : 00 77 00 04 01
+SW : 6d00
+APDU Command : 00 78 00 04 01
+SW : 6d00
+APDU Command : 00 79 00 04 01
+SW : 6d00
+APDU Command : 00 7A 00 04 01
+SW : 6d00
+APDU Command : 00 7B 00 04 01
+SW : 6d00
+APDU Command : 00 7C 00 04 01
+SW : 6d00
+APDU Command : 00 7D 00 04 01
+SW : 6d00
+APDU Command : 00 7E 00 04 01
+SW : 6d00
+APDU Command : 00 7F 00 04 01
+SW : 6d00
+APDU Command : 00 80 00 04 01
+SW : 6d00
+APDU Command : 00 81 00 04 01
+SW : 6d00
+APDU Command : 00 82 00 04 01
+SW : 6d00
+APDU Command : 00 83 00 04 01
+SW : 6d00
+APDU Command : 00 84 00 04 01
+SW : 6d00
+APDU Command : 00 85 00 04 01
+SW : 6d00
+APDU Command : 00 86 00 04 01
+SW : 6d00
+APDU Command : 00 87 00 04 01
+SW : 6d00
+APDU Command : 00 88 00 04 01
+SW : 6d00
+APDU Command : 00 89 00 04 01
+SW : 6d00
+APDU Command : 00 8A 00 04 01
+SW : 6d00
+APDU Command : 00 8B 00 04 01
+SW : 6d00
+APDU Command : 00 8C 00 04 01
+SW : 6d00
+APDU Command : 00 8D 00 04 01
+SW : 6d00
+APDU Command : 00 8E 00 04 01
+SW : 6d00
+APDU Command : 00 8F 00 04 01
+SW : 6d00
+APDU Command : 00 90 00 04 01
+SW : 6d00
+APDU Command : 00 91 00 04 01
+SW : 6d00
+APDU Command : 00 92 00 04 01
+SW : 6d00
+APDU Command : 00 93 00 04 01
+SW : 6d00
+APDU Command : 00 94 00 04 01
+SW : 6d00
+APDU Command : 00 95 00 04 01
+SW : 6d00
+APDU Command : 00 96 00 04 01
+SW : 6d00
+APDU Command : 00 97 00 04 01
+SW : 6d00
+APDU Command : 00 98 00 04 01
+SW : 6d00
+APDU Command : 00 99 00 04 01
+SW : 6d00
+APDU Command : 00 9A 00 04 01
+SW : 6d00
+APDU Command : 00 9B 00 04 01
+SW : 6d00
+APDU Command : 00 9C 00 04 01
+SW : 6d00
+APDU Command : 00 9D 00 04 01
+SW : 6d00
+APDU Command : 00 9E 00 04 01
+SW : 6d00
+APDU Command : 00 9F 00 04 01
+SW : 6d00
+APDU Command : 00 A0 00 04 01
+SW : 6d00
+APDU Command : 00 A1 00 04 01
+SW : 6d00
+APDU Command : 00 A2 00 04 01
+SW : 6d00
+APDU Command : 00 A3 00 04 01
+SW : 6d00
+APDU Command : 00 A4 00 04 01
+SW : 6d00
+APDU Command : 00 A5 00 04 01
+SW : 6d00
+APDU Command : 00 A6 00 04 01
+SW : 6d00
+APDU Command : 00 A7 00 04 01
+SW : 6d00
+APDU Command : 00 A8 00 04 01
+SW : 6d00
+APDU Command : 00 A9 00 04 01
+SW : 6d00
+APDU Command : 00 AA 00 04 01
+SW : 6d00
+APDU Command : 00 AB 00 04 01
+SW : 6d00
+APDU Command : 00 AC 00 04 01
+SW : 6d00
+APDU Command : 00 AD 00 04 01
+SW : 6d00
+APDU Command : 00 AE 00 04 01
+SW : 6d00
+APDU Command : 00 AF 00 04 01
+SW : 6d00
+APDU Command : 00 B0 00 04 01
+SW : 6d00
+APDU Command : 00 B1 00 04 01
+SW : 6d00
+APDU Command : 00 B2 00 04 01
+SW : 6d00
+APDU Command : 00 B3 00 04 01
+SW : 6d00
+APDU Command : 00 B4 00 04 01
+SW : 6d00
+APDU Command : 00 B5 00 04 01
+SW : 6d00
+APDU Command : 00 B6 00 04 01
+SW : 6d00
+APDU Command : 00 B7 00 04 01
+SW : 6d00
+APDU Command : 00 B8 00 04 01
+SW : 6d00
+APDU Command : 00 B9 00 04 01
+SW : 6d00
+APDU Command : 00 BA 00 04 01
+SW : 6d00
+APDU Command : 00 BB 00 04 01
+SW : 6d00
+APDU Command : 00 BC 00 04 01
+SW : 6d00
+APDU Command : 00 BD 00 04 01
+SW : 6d00
+APDU Command : 00 BE 00 04 01
+SW : 6d00
+APDU Command : 00 BF 00 04 01
+SW : 6d00
+APDU Command : 00 C0 00 04 01
+SW : 6d00
+APDU Command : 00 C1 00 04 01
+SW : 6d00
+APDU Command : 00 C2 00 04 01
+SW : 6d00
+APDU Command : 00 C3 00 04 01
+SW : 6d00
+APDU Command : 00 C4 00 04 01
+SW : 6d00
+APDU Command : 00 C5 00 04 01
+SW : 6d00
+APDU Command : 00 C6 00 04 01
+SW : 6d00
+APDU Command : 00 C7 00 04 01
+SW : 6d00
+APDU Command : 00 C8 00 04 01
+SW : 6d00
+APDU Command : 00 C9 00 04 01
+SW : 6d00
+APDU Command : 00 CA 00 04 01
+SW : 6d00
+APDU Command : 00 CB 00 04 01
+SW : 6d00
+APDU Command : 00 CC 00 04 01
+SW : 6d00
+APDU Command : 00 CD 00 04 01
+SW : 6d00
+APDU Command : 00 CE 00 04 01
+SW : 6d00
+APDU Command : 00 CF 00 04 01
+SW : 6d00
+APDU Command : 00 D0 00 04 01
+SW : 6d00
+APDU Command : 00 D1 00 04 01
+SW : 6d00
+APDU Command : 00 D2 00 04 01
+SW : 6d00
+APDU Command : 00 D3 00 04 01
+SW : 6d00
+APDU Command : 00 D4 00 04 01
+SW : 6d00
+APDU Command : 00 D5 00 04 01
+SW : 6d00
+APDU Command : 00 D6 00 04 01
+SW : 6d00
+APDU Command : 00 D7 00 04 01
+SW : 6d00
+APDU Command : 00 D8 00 04 01
+SW : 6d00
+APDU Command : 00 D9 00 04 01
+SW : 6d00
+APDU Command : 00 DA 00 04 01
+SW : 6d00
+APDU Command : 00 DB 00 04 01
+SW : 6d00
+APDU Command : 00 DC 00 04 01
+SW : 6d00
+APDU Command : 00 DD 00 04 01
+SW : 6d00
+APDU Command : 00 DE 00 04 01
+SW : 6d00
+APDU Command : 00 DF 00 04 01
+SW : 6d00
+APDU Command : 00 E0 00 04 01
+SW : 6d00
+APDU Command : 00 E1 00 04 01
+SW : 6d00
+APDU Command : 00 E2 00 04 01
+SW : 6d00
+APDU Command : 00 E3 00 04 01
+SW : 6d00
+APDU Command : 00 E4 00 04 01
+SW : 6d00
+APDU Command : 00 E5 00 04 01
+SW : 6d00
+APDU Command : 00 E6 00 04 01
+SW : 6d00
+APDU Command : 00 E7 00 04 01
+SW : 6d00
+APDU Command : 00 E8 00 04 01
+SW : 6d00
+APDU Command : 00 E9 00 04 01
+SW : 6d00
+APDU Command : 00 EA 00 04 01
+SW : 6d00
+APDU Command : 00 EB 00 04 01
+SW : 6d00
+APDU Command : 00 EC 00 04 01
+SW : 6d00
+APDU Command : 00 ED 00 04 01
+SW : 6d00
+APDU Command : 00 EE 00 04 01
+SW : 6d00
+APDU Command : 00 EF 00 04 01
+SW : 6d00
+APDU Command : 00 F0 00 04 01
+SW : 6d00
+APDU Command : 00 F1 00 04 01
+SW : 6d00
+APDU Command : 00 F2 00 04 01
+SW : 6d00
+APDU Command : 00 F3 00 04 01
+SW : 6d00
+APDU Command : 00 F4 00 04 01
+SW : 6d00
+APDU Command : 00 F5 00 04 01
+SW : 6d00
+APDU Command : 00 F6 00 04 01
+SW : 6d00
+APDU Command : 00 F7 00 04 01
+SW : 6d00
+APDU Command : 00 F8 00 04 01
+SW : 6d00
+APDU Command : 00 F9 00 04 01
+SW : 6d00
+APDU Command : 00 FA 00 04 01
+SW : 6d00
+APDU Command : 00 FB 00 04 01
+SW : 6d00
+APDU Command : 00 FC 00 04 01
+SW : 6d00
+APDU Command : 00 FD 00 04 01
+SW : 6d00
+APDU Command : 00 FE 00 04 01
+SW : 6d00
+APDU Command : 00 FF 00 04 01
+SW : 6d00
+test INSNotSupported, ended PASS ...
+**************************************
